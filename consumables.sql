@@ -28,11 +28,11 @@ CREATE TABLE Student (
 	mbti varchar(50),
 	hasJob boolean,
 	job varchar(50),
-	CalvinT boolean,
-	CalvinU boolean,
-	CalvinL boolean,
-	CalvinI boolean,
-	CalvinP boolean,
+	calvinT boolean,
+	calvinU boolean,
+	calvinL boolean,
+	calvinI boolean,
+	calvinP boolean,
 	hangout varchar(50),
 	hateHope integer,
 	bQuiv integer,
@@ -112,4 +112,24 @@ INSERT INTO Date VALUES ('jgb23', 'aaa11', true, false, 'Johnnys', 'Eat Lunch', 
 INSERT INTO Date VALUES ('jgb23', 'jsk44', false, false, 'Fish House', 'Get Coffee', '2116-12-25 00:00:00');
 INSERT INTO Date VALUES ('jsk44', 'aaa11', true, false, 'Spoelhof Center', 'Work Out', '2016-11-12 13:14:15');
 
---TODO: add sample queries
+--Sample queries
+
+--Return the matches for a student that haven't been invalidated (neither student's validation code is 2 or greater)
+
+SELECT *
+FROM Match
+WHERE aValid < 2 AND bValid < 2 AND ( aCalvinID = 'aaa11' OR bCalvinID = 'aaa11');
+
+--return a student's profile record and their photo
+
+SELECT *
+FROM Student, StudentPicture
+WHERE Student.CalvinID = 'aaa11';
+
+--return all of a student's messages in chronological order with most recent first
+
+SELECT *
+FROM Message
+WHERE toID = 'aaa11' OR fromID = 'aaa11'
+ORDER BY timestamp DESC;
+
