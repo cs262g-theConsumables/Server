@@ -1,0 +1,18 @@
+This is a sample dataset for a virtual database in the app.
+Format: CalvinID varchar(50) PRIMARY KEY;password varchar(50);first varchar(50);last varchar(50);username varchar(50);birthday date;homeCity varchar (50);homeState varchar(50);homeCountry varchar(50);major varchar(100);gender varchar(50);height integer
+
+alf77;Tourmalline853;Alex;Fontri;catwhiskers;1992-3-25;Grand Rapids;Michigan;United States of America;Spanish;male;72
+brn65;p455w0rd;Bailey;Nantan;seahorse;1994-8-16;Oakland;California;United States of America;Engineering;female;61
+art93;5tg6yh%TG^YH;Alan;Terpstra;whiplash;1998-12-12;Schaumburg;Illinois;United States of America;Biology;male;77
+cyd43;drowssap;Cody;Dan;NULL;1995-7-21;Gwangju;NULL;South Korea;Business;male;65
+amf96;gnjiefdmskb;Amber;Froggett;Frogger;1998-3-7;Grand Rapids;Michigan;United States of America;Kinesiology;female;60
+oyt89;MyN4M31sN0T0L1V3R;Olive;Tierman;NULL;1996-8-9;Norfolk;Virginia;United States of America;Marketing;female;67
+nrl44;4wy54YWRRG$W;Nadia;Lalonde;Pinkpanther;1994-2-5;Guadalajara;NULL;Mexico;Special Education;female;62
+fnb29;fdsq4QGR#Q$^^;Florence;Bertrand;Orange-Oriel;1995-5-5;Grand Rapids;Michigan;United States of America;Linguistics and Writing;NULL;65
+ryp11;$W54tg54Geg;Ryan;Peregrine;KingKong;1995-8-16;Houston;Texas;United States of America;Nursing;male;60
+wsc35;!fwa4wfsd43tt564;Wyatt;Cooper;halfanemerald;1994-11-10;Grand Rapids;Michigan;United States of America;Youth Ministry;male;70
+lmn8;aaa111;Leah;Norris-Elm;NULL;1992-6-5;St. Louis;Missouri;United States of America;Marketing;female;65
+mno09;w4t5tW%$T;Maria;O'Brian;goCubs;1997-4-1;Chicago;Illinois;United States of America;Computer Science;genderqueer;66
+uil80;g#FQqfeds;Uriel;Littlewood;Lavender;1996-10-5;Grand Rapids;Michigan;United States of America;Art;female;71
+tgt65;O&Yky7y(^kiu;Tory;Thompson;Funsize;1998-12-21;Seattle;Washington;United States of America;Computer Science;male;68
+red30;lkjhgfdsa;Rachel;DeVonne;oregano_beast;1995-8-6;New York City;New York;United States of America;Chemistry;female;69
