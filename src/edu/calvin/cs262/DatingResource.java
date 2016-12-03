@@ -419,7 +419,14 @@ public class DatingResource {
             statement = connection.createStatement();
             rs = statement.executeQuery("SELECT * FROM Student WHERE CalvinID=" + id);
             if (rs.next()) {
-                student = new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getLocalDate(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21), rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26), rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31), rs.getString(32), rs.getBoolean(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36), rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41));
+                student = new Student(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getLocalDate(10),
+                        rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15),
+                        rs.getString(16), rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20),
+                        rs.getBoolean(21), rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25),
+                        rs.getInt(26), rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
+                        rs.getString(32), rs.getBoolean(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36), rs.getInt(37),
+                        rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41));
             }
         } catch (SQLException e) {
             throw (e);
@@ -446,7 +453,14 @@ public class DatingResource {
             statement = connection.createStatement();
             rs = statement.executeQuery("SELECT * FROM Student");
             while (rs.next()) {
-                students.add(new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getLocalDate(10), rs.getString(11), rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21), rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26), rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31), rs.getString(32), rs.getBoolean(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36), rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
+                students.add(new Student(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getLocalDate(10), rs.getString(11),
+                        rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16),
+                        rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21),
+                        rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26),
+                        rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
+                        rs.getString(32), rs.getBoolean(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36),
+                        rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
             }
         } catch (SQLException e) {
             throw (e);

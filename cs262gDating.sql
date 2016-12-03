@@ -54,7 +54,7 @@ CREATE TABLE Student (
 
 CREATE TABLE StudentPicture (
 	CalvinID varchar(50) REFERENCES Student(CalvinID),
-	picture bytea
+	picture blob
 	);
 
 CREATE TABLE Match (
