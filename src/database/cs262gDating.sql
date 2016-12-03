@@ -58,7 +58,6 @@ CREATE TABLE Match (
 	reason varchar(200),
 	aValid integer,
 	bValid integer,
-	date date
 	);
 	
 CREATE TABLE Message (
