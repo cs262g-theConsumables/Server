@@ -1,34 +1,39 @@
 package edu.calvin.cs262;
 
 import java.sql.Date;
+import java.sql.Blob;
 
 /**
  * A User class for the Student relation
  *
- * @author Loganvp
+ * @author Loganvp, meliornox
  * @version 12/3/16
  */
 class Student {
 
     private String CalvinID, password, first, last, username, calvinGradMonth, homeCity, homeState, homeCountry, major,
-        gender, religion, mbti, job, hangout, diningPreference, sports, vocation, studySpot, chapelDay, nationality;
-    private int collegeStartYear, calvinGradYear, hateHope, bQuiv, bunHate, oceanO, oceanC, oceanE, oceanA, oceanN, height;
+            gender, religion, mbti, job, hangout, diningPreference, sports, vocation, studySpot, chapelDay, nationality;
+    private int collegeStartYear, calvinGradYear, hateHope, bQuiv, bunHate, oceanO, oceanC, oceanE, oceanA, oceanN,
+            height;
     private boolean hasJob, calvinT, calvinU, calvinL, calvinI, calvinP, loft;
     private Date birthday;
+    private Blob picture;
 
 
-            @SuppressWarnings("unused")
+    @SuppressWarnings("unused")
     Student() { /* a default constructor, required by Gson */ }
 
-    Student(String CalvinID, String password, String first, String last, String username, int collegeStartYear, int calvinGradYear,
-            String calvinGradMonth, Date birthday, String homeCity, String homeState, String homeCountry, String major,
-            String gender, String religion, String mbti, boolean hasJob, String job, boolean calvinT, boolean calvinU, boolean calvinL,
-            boolean calvinI, boolean calvinP, Sting hangout, int hateHope, int bQuiv, String diningPreference, String sports,
-            Int bunHate, String vocation, String studySpot, String chapelDay, boolean loft, int oceanO, int oceanC, int oceanE,
-            int oceanA, int oceanN, int height, String nationality) {
+    Student(String CalvinID, String password, Blob picture, String first, String last, String username,
+            int collegeStartYear, int calvinGradYear, String calvinGradMonth, Date birthday, String homeCity,
+            String homeState, String homeCountry, String major, String gender, String religion, String mbti,
+            boolean hasJob, String job, boolean calvinT, boolean calvinU, boolean calvinL, boolean calvinI,
+            boolean calvinP, String hangout, int hateHope, int bQuiv, String diningPreference, String sports,
+            int bunHate, String vocation, String studySpot, String chapelDay, boolean loft, int oceanO, int oceanC,
+            int oceanE, int oceanA, int oceanN, int height, String nationality) {
 
         this.CalvinID = CalvinID;
         this.password = password;
+        this.picture = picture;
         this.first = first;
         this.last = last;
         this.username = username;
@@ -78,6 +83,9 @@ class Student {
     public String getPassword() { return password; }
 
     @SuppressWarnings("unused")
+    public Blob getBlob() { return picture; }
+
+    @SuppressWarnings("unused")
     public String getFirst() { return first; }
 
     @SuppressWarnings("unused")
@@ -120,7 +128,7 @@ class Student {
     public String getMbti() { return mbti; }
 
     @SuppressWarnings("unused")
-    public boolean getHasJob() { return hasjob; }
+    public boolean getHasJob() { return hasJob; }
 
     @SuppressWarnings("unused")
     public String getJob() { return job; }
@@ -200,6 +208,9 @@ class Student {
 
     @SuppressWarnings("unused")
     public void setPassword(String password) { this.password = password; }
+
+    @SuppressWarnings("unused")
+    public void setBlob(Blob picture) { this.picture = picture; }
 
     @SuppressWarnings("unused")
     public void setFirst(String first) { this.first = first; }

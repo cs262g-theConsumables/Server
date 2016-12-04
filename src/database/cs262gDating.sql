@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Student;
 CREATE TABLE Student (
 	CalvinID varchar(50) PRIMARY KEY, 
 	password varchar(50),
-	picture bytea,
+	picture blob,
 	first varchar(50),
 	last varchar(50),
 	username varchar(50),
@@ -61,14 +61,14 @@ CREATE TABLE Match (
 	);
 	
 CREATE TABLE Message (
-    ID integer PRIMARY KEY,
+  ID integer PRIMARY KEY,
 	timestamp timestamp,
 	toID varchar(50) REFERENCES Student(CalvinID),
 	fromID varchar(50) REFERENCES Student(CalvinID),
 	message varchar(1000)
 	);
 	
-CREATE TABLE Date(
+CREATE TABLE Datedate(
 	ID integer PRIMARY KEY,
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
 	bCalvinID varchar(50) REFERENCES Student(CalvinID),
@@ -98,6 +98,6 @@ INSERT INTO Message VALUES (1, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'How are thi
 INSERT INTO Message VALUES (2, CURRENT_TIMESTAMP, 'aaa11', 'jsk44', '');
 INSERT INTO Message VALUES (3, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'Okay...');
 
-INSERT INTO Date VALUES (1, 'jgb23', 'aaa11', true, false, 'Johnnys', 'Eat Lunch', '2016-11-08 12:00:00');
-INSERT INTO Date VALUES (2, 'jgb23', 'jsk44', false, false, 'Fish House', 'Get Coffee', '2116-12-25 00:00:00');
-INSERT INTO Date VALUES (3, 'jsk44', 'aaa11', true, false, 'Spoelhof Center', 'Work Out', '2016-11-12 13:14:15');
+INSERT INTO Datedate VALUES (1, 'jgb23', 'aaa11', true, false, 'Johnnys', 'Eat Lunch', '2016-11-08 12:00:00');
+INSERT INTO Datedate VALUES (2, 'jgb23', 'jsk44', false, false, 'Fish House', 'Get Coffee', '2116-12-25 00:00:00');
+INSERT INTO Datedate VALUES (3, 'jsk44', 'aaa11', true, false, 'Spoelhof Center', 'Work Out', '2016-11-12 13:14:15');

@@ -1,25 +1,24 @@
 package edu.calvin.cs262;
 
-
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * A User class for the Message relation
  *
- * @author Loganvp
+ * @author Loganvp, meliornox
  * @version 12/3/16
  */
 class Message {
 
     private int ID;
-    private timestamp timestamp;
+    private Timestamp timestamp;
     private String toID, fromID, message;
 
 
     @SuppressWarnings("unused")
     Message() { /* a default constructor, required by Gson */ }
 
-    Message(int ID, timestamp timestamp, String toID, String fromID, String message) {
+    Message(int ID, Timestamp timestamp, String toID, String fromID, String message) {
 
         this.ID = ID;
         this.timestamp = timestamp;
@@ -35,7 +34,7 @@ class Message {
     public int getID() { return ID; }
 
     @SuppressWarnings("unused")
-    public timestamp getTimestamp() { return timestamp; }
+    public Timestamp getTimestamp() { return timestamp; }
 
     @SuppressWarnings("unused")
     public String getToID() { return toID; }
@@ -53,7 +52,7 @@ class Message {
     public void setID(int ID) { this.ID = ID; }
 
     @SuppressWarnings("unused")
-    public void getTimestamp(timestamp timestamp) { this.timestamp = timestamp; }
+    public void getTimestamp(Timestamp timestamp) { this.timestamp = timestamp; }
 
     @SuppressWarnings("unused")
     public void getToID(String toID) { this.toID = toID; }

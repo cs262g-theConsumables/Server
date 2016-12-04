@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# source the env.sh file
-source env.sh
+# Environment variables
+NAME=Lab09
+DIR=/var/cs262/$NAME/src/
+PID=$DIR/$USER-$NAME.pid
 
 # Write our PID file
 echo $$ > $DIR/$USER-$NAME.pid
@@ -10,5 +12,5 @@ echo $$ > $DIR/$USER-$NAME.pid
 cd $DIR
 
 # Run this script to compile/start the cs262 data service.
-javac -cp "../lib/*" edu/calvin/cs262/Student.java edu/calvin/cs262/Match.java edu/calvin/cs262/Message.java edu/calvin/cs262/Datedate.java edu/calvin/cs262/DatingResource.java
+javac -cp "../lib/*" edu/calvin/cs262/Player.java edu/calvin/cs262/MonopolyResource.java
 java -cp ".:../lib/*" edu.calvin.cs262.MonopolyResource
