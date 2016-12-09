@@ -12,11 +12,11 @@ import java.sql.Blob;
 class Student {
 
     private String CalvinID, password, first, last, username, classYear, homeCity, homeState, homeCountry, major,
-            majorDepartment, majorNumber, gender, genderWant, religion, mbti, job, hangout, diningPreference, sports,
+            majorDepartment, majorNumber, gender, genderWant, religion, mbti, job, hangout, bQuiv, diningPreference, sports,
             studySpot, chapelDay, nationality, vocation, aboutMe, status;
-    private char calvinT, calvinU, calvinL, calvinI, calvinP, loft;
-    private int hateHope, bQuiv, bunHate, height;
-    private boolean hasJob;
+    private char loft;
+    private int hateHope, bunHate, height;
+    private boolean hasJob, tulip;
     private Date birthday;
     private Blob picture;
 
@@ -39,16 +39,12 @@ class Student {
             String majorDepartment,
             String majorNumber,
             String gender,
-            String genderWant
+            String genderWant,
             String religion,
             String mbti,
             boolean hasJob,
             String job,
-            char calvinT,
-            char calvinU,
-            char calvinL,
-            char calvinI,
-            char calvinP,
+            boolean tulip,
             String hangout,
             int hateHope,
             String bQuiv,
@@ -59,7 +55,7 @@ class Student {
             String chapelDay,
             char loft,
             int height,
-            String nationality
+            String nationality,
             String vocation,
             String aboutMe,
             String status) {
@@ -84,11 +80,7 @@ class Student {
         this.mbti = mbti;
         this.hasJob = hasJob;
         this.job = job;
-        this.calvinT = calvinT;
-        this.calvinU = calvinU;
-        this.calvinL = calvinL;
-        this.calvinI = calvinI;
-        this.calvinP = calvinP;
+        this.tulip = tulip;
         this.hangout = hangout;
         this.hateHope = hateHope;
         this.bQuiv = bQuiv;
@@ -126,7 +118,7 @@ class Student {
     public String getUsername() { return username; }
 
     @SuppressWarnings("unused")
-    public String getClassYear() { return classYearYear; }
+    public String getClassYear() { return classYear; }
 
     @SuppressWarnings("unused")
     public Date getBirthday() { return birthday; }
@@ -168,19 +160,7 @@ class Student {
     public String getJob() { return job; }
 
     @SuppressWarnings("unused")
-    public char getCalvinT() { return calvinT; }
-
-    @SuppressWarnings("unused")
-    public char getCalvinU() { return calvinU; }
-
-    @SuppressWarnings("unused")
-    public char getCalvinL() { return calvinL; }
-
-    @SuppressWarnings("unused")
-    public char getCalvinI() { return calvinI; }
-
-    @SuppressWarnings("unused")
-    public char getCalvinP() { return calvinP; }
+    public boolean getTulip() { return tulip; }
 
     @SuppressWarnings("unused")
     public String getHangout() { return hangout; }
@@ -204,7 +184,7 @@ class Student {
     public String getStudySpot() { return studySpot; }
 
     @SuppressWarnings("unused")
-    public String getChapelDays() { return chapelDay; }
+    public String getChapelDay() { return chapelDay; }
 
     @SuppressWarnings("unused")
     public char getLoft() { return loft; }
@@ -289,19 +269,7 @@ class Student {
     public void setJob(String job) { this.job = job; }
 
     @SuppressWarnings("unused")
-    public void setCalvinT(char calvinT) { this.calvinT = calvinT; }
-
-    @SuppressWarnings("unused")
-    public void setCalvinU(char calvinU) { this.calvinU = calvinU; }
-
-    @SuppressWarnings("unused")
-    public void setCalvinL(char calvinL) { this.calvinL = calvinL; }
-
-    @SuppressWarnings("unused")
-    public void setCalvinI(char calvinI) { this.calvinI = calvinI; }
-
-    @SuppressWarnings("unused")
-    public void setCalvinP(char calvinP) { this.calvinP = calvinP; }
+    public void setTulip(boolean tulip) { this.tulip = tulip; }
 
     @SuppressWarnings("unused")
     public void setHangout(String hangout) { this.hangout = hangout; }
@@ -325,7 +293,7 @@ class Student {
     public void setStudySpot(String studySpot) { this.studySpot = studySpot; }
 
     @SuppressWarnings("unused")
-    public void setChapelDays(String chapelDay) { this.chapelDay = chapelDay; }
+    public void setChapelDay(String chapelDay) { this.chapelDay = chapelDay; }
 
     @SuppressWarnings("unused")
     public void setLoft(char loft) { this.loft = loft; }
