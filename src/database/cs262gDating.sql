@@ -54,6 +54,7 @@ CREATE TABLE Match (
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
 	bCalvinID varchar(50) REFERENCES Student(CalvinID),
 	reason varchar(200),
+	--Unvalidated is a 0, validated is a 1, invalidated is a 2.
 	aValid integer,
 	bValid integer,
 	);

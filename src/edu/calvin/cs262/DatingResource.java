@@ -141,7 +141,49 @@ public class DatingResource {
         }
         return null;
     }
-	
+
+//    /**
+//     * GET method that returns a list of Students based on search parameters
+//     *
+//     * @param field the search field
+//     * @param param the search parameter
+//     * @return a JSON version of a list of Students, if any, for the given parameters within the field.
+//     */
+//    @GET
+//    @Path("/search/{field}/{param}")
+//    @Produces("application/json")
+//    public String getSearch(
+//            @PathParam("field") String field,
+//            @PathParam("param") String param)
+//    {
+//        try {
+//            return new Gson().toJson(retrieveSearch(field, param));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
+
+    /**
+     * GET method that returns a list of Students with a certain name
+     *
+     * @param name the name field
+     * @return a JSON version of a list of Students, if any, for the given name.
+     */
+    @GET
+    @Path("/search/{name}")
+    @Produces("application/json")
+    public String getSearchByName(
+            @PathParam("name") String name)
+    {
+        try {
+            return new Gson().toJson(retrieveName(name));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     /**
      * PUT method for creating an instance of Student with a given ID - If the
      * student already exists, update the fields using the new student field values. We do this
@@ -446,7 +488,7 @@ public class DatingResource {
     // /addOrUpdateStudent(Student student), /addOrUpdateMatch(Match match), /addOrUpdateMessage(Message message),
     // /addOrUpdateDatedate(Datedate date), /addNewMessage(Message message), /addNewDatedate(Datedate date),
     // /deleteStudent(Student student),  /deleteMatch(Match match), /deleteMessage(Message message),
-    // /deleteDatedate(Datedate date)
+    // /deleteDatedate(Datedate date), //retrieveSearch(String field, String param), retrieveName(String name)
 
     /**
      * Constants for a local Postgresql server with the monopoly database
@@ -521,6 +563,35 @@ public class DatingResource {
         }
         return student;
     }
+
+    /*
+    * Utility method that does the database query, potentially throwing an SQLException,
+    * returning a match object (or null).
+    */
+    private Match retrieveMatch(String id1, String id2) throws Exception {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet rs = null;
+        Match match = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
+            statement = connection.createStatement();
+            rs = statement.executeQuery("SELECT * FROM Match WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
+                    + ") OR (aCalvinID=" + id2 +" AND bCalvinID=" + id1 +")");
+            if (rs.next()) {
+                match = new Match(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5))
+            }
+        } catch (SQLException e) {
+            throw (e);
+        } finally {
+            rs.close();
+            statement.close();
+            connection.close();
+        }
+        return match;
+    }
+
 
     /*
     * Utility method that does the database query, potentially throwing an SQLException,
@@ -617,6 +688,42 @@ public class DatingResource {
     }
 
     /*
+    * Utility method that does the database update, potentially throwing an SQLException,
+    * returning void.
+    */
+    private void makeMatches(Student studentA) throws Exception {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet rs = null;
+        List<Student> students = retrieveStudents();
+
+        //Get list of students and student.  For each element in students, if the element does not equal the student and
+        // the match between the students does not exist, search through most of the student parameters and if they are
+        // equal make a new match with the parameter as the reason.
+
+        for(Student studentB : students){
+            if((studentB.getCalvinID() != studentA.getCalvinID()) && (retrieveMatch(studentA.getCalvinID(),
+                    studentB.getCalvinID()) == null)){
+                String reason = '';
+                if(studentA.getMajor() == studentB.getMajor()){
+                    reason = 'Same major';
+                }else if(){
+
+                }else if(){
+
+                }else if(){
+
+                }
+
+                if(reason != ''){
+                    Match match = new Match(studentA.getCalvinID(), studentB.getCalvinID(), reason, 0, 0);
+                    addOrUpdateMatch(match);
+                }
+            }
+        }
+    }
+
+    /*
     * Utility method that does the database query, potentially throwing an SQLException,
     * returning a list of name-value map objects (potentially empty).
     */
@@ -672,6 +779,82 @@ public class DatingResource {
             connection.close();
         }
         return dates;
+    }
+
+//    /*
+//    * Utility method that does the database query, potentially throwing an SQLException,
+//    * returning a list of name-value map objects (potentially empty).
+//    */
+//    private List<Student> retrieveSearch(String field, String param) throws Exception {
+//        Connection connection = null;
+//        Statement statement = null;
+//        ResultSet rs = null;
+//        List<Student> result = new ArrayList<>();
+//        try {
+//            Class.forName("org.postgresql.Driver");
+//            connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
+//            statement = connection.createStatement();
+//            rs = statement.executeQuery("SELECT * FROM Student WHERE " + field + "=" + param);
+//            while (rs.next()) {
+//                result.add(new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5),
+//                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getDate(10), rs.getString(11),
+//                        rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16),
+//                        rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21),
+//                        rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26),
+//                        rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
+//                        rs.getString(32), rs.getString(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36),
+//                        rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
+//            }
+//        } catch (SQLException e) {
+//            throw (e);
+//        } finally {
+//            rs.close();
+//            statement.close();
+//            connection.close();
+//        }
+//        return result;
+//    }
+
+    /*
+    * Utility method that does the database query, potentially throwing an SQLException,
+    * returning a list of name-value map objects (potentially empty).
+    */
+    private List<Student> retrieveName(String name) throws Exception {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet rs = null;
+        List<Student> result = new ArrayList<>();
+        try {
+            Class.forName("org.postgresql.Driver");
+            connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
+            statement = connection.createStatement();
+            if(name.indexOf(' ') > 0){
+                String[] array = name.split(" ");
+                String firstName = array[0];
+                String lastName = array[1];
+
+                rs = statement.executeQuery("SELECT * FROM Student WHERE first=" + firstName + " AND last=" + lastName);
+            } else {
+                rs = statement.executeQuery("SELECT * FROM Student WHERE first=" + name + " OR last=" + name);
+            }
+            while (rs.next()) {
+                result.add(new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5),
+                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getDate(10), rs.getString(11),
+                        rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16),
+                        rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21),
+                        rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26),
+                        rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
+                        rs.getString(32), rs.getString(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36),
+                        rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
+            }
+        } catch (SQLException e) {
+            throw (e);
+        } finally {
+            rs.close();
+            statement.close();
+            connection.close();
+        }
+        return result;
     }
 
     /*
