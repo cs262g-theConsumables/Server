@@ -9,47 +9,45 @@ DROP TABLE IF EXISTS Student;
 
 -- Create the schema.
 CREATE TABLE Student (
-	CalvinID varchar(50) PRIMARY KEY, 
+	CalvinID varchar(50) PRIMARY KEY,
 	password varchar(50),
 	picture blob,
 	first varchar(50),
 	last varchar(50),
 	username varchar(50),
-	collegeStartYear integer,
-	calvinGradYear integer,
-	calvinGradMonth varchar(50),
+	classYear varchar(50),
 	birthday date,
 	homeCity varchar(50),
 	homeState varchar(50),
 	homeCountry varchar(50),
 	major varchar(100),
+	majorDepartment varchar(50),
+	majorNumber varchar(50),
 	gender varchar(50),
+	genderWant varchar(50),
 	religion varchar(50),
-	mbti varchar(50),
+	mbti varchar(5),
 	hasJob boolean,
 	job varchar(50),
-	calvinT boolean,
-	calvinU boolean,
-	calvinL boolean,
-	calvinI boolean,
-	calvinP boolean,
+	calvinT char(1),
+	calvinU char(1),
+	calvinL char(1),
+	calvinI char(1),
+	calvinP char(1),
 	hangout varchar(50),
 	hateHope integer,
-	bQuiv integer,
+	bQuiv varchar(50),
 	diningPreference varchar(50),
 	sports varchar(50),
 	bunHate integer,
-	vocation varchar(200),
 	studySpot varchar(50),
 	chapelDay varchar(50),
-	loft boolean,
-	oceanO integer,
-	oceanC integer,
-	oceanE integer,
-	oceanA integer,
-	oceanN integer,
+	loft char(1),
 	height integer,
-	nationality varchar(50)
+	nationality varchar(50),
+	vocation varchar(200),
+	aboutMe varchar(200),
+	status varchar(200)
 	);
 
 CREATE TABLE Match (
@@ -59,7 +57,7 @@ CREATE TABLE Match (
 	aValid integer,
 	bValid integer,
 	);
-	
+
 CREATE TABLE Message (
   ID integer PRIMARY KEY,
 	timestamp timestamp,
@@ -67,7 +65,7 @@ CREATE TABLE Message (
 	fromID varchar(50) REFERENCES Student(CalvinID),
 	message varchar(1000)
 	);
-	
+
 CREATE TABLE Datedate(
 	ID integer PRIMARY KEY,
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
@@ -78,7 +76,7 @@ CREATE TABLE Datedate(
 	activity varchar(50),
 	time timestamp
 	);
-	
+
 -- Allow users to select data from the tables.
 GRANT SELECT ON Student TO PUBLIC;
 GRANT SELECT ON Match TO PUBLIC;
