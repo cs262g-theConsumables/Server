@@ -91,6 +91,7 @@ public class DatingResource {
     @Produces("application/json")
     public String getMatches(@PathParam("id") String id) {
         try {
+            makeMatches(id);
             return new Gson().toJson(retrieveMatches(id));
         } catch (Exception e) {
             e.printStackTrace();
@@ -379,11 +380,7 @@ public class DatingResource {
                     "deleted",
                     false,
                     "deleted",
-                    "d",
-                    "d",
-                    "d",
-                    "d",
-                    "d",
+                    false,
                     "deleted",
                     0,
                     "deleted",
@@ -392,7 +389,7 @@ public class DatingResource {
                     0,
                     "deleted",
                     "deleted",
-                    "d",
+                    'd',
                     0,
                     "deleted",
                     "deleted",
@@ -534,25 +531,21 @@ public class DatingResource {
                         rs.getString(18),
                         rs.getBoolean(19),
                         rs.getString(20),
-                        rs.getChar(21),
-                        rs.getChar(22),
-                        rs.getChar(23),
-                        rs.getChar(24),
-                        rs.getChar(25),
+                        rs.getBoolean(21),
+                        rs.getString(22),
+                        rs.getInt(23),
+                        rs.getString(24),
+                        rs.getString(25),
                         rs.getString(26),
                         rs.getInt(27),
                         rs.getString(28),
                         rs.getString(29),
-                        rs.getString(30),
+                        rs.getString(30).charAt(0),
                         rs.getInt(31),
                         rs.getString(32),
                         rs.getString(33),
-                        rs.getChar(34),
-                        rs.getInt(35),
-                        rs.getString(36),
-                        rs.getString(37),
-                        rs.getString(38),
-                        rs.getString(39));
+                        rs.getString(34),
+                        rs.getString(35));
             }
         } catch (SQLException e) {
             throw (e);
@@ -580,7 +573,7 @@ public class DatingResource {
             rs = statement.executeQuery("SELECT * FROM Match WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
                     + ") OR (aCalvinID=" + id2 +" AND bCalvinID=" + id1 +")");
             if (rs.next()) {
-                match = new Match(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5))
+                match = new Match(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5));
             }
         } catch (SQLException e) {
             throw (e);
@@ -629,25 +622,21 @@ public class DatingResource {
                         rs.getString(18),
                         rs.getBoolean(19),
                         rs.getString(20),
-                        rs.getChar(21),
-                        rs.getChar(22),
-                        rs.getChar(23),
-                        rs.getChar(24),
-                        rs.getChar(25),
+                        rs.getBoolean(21),
+                        rs.getString(22),
+                        rs.getInt(23),
+                        rs.getString(24),
+                        rs.getString(25),
                         rs.getString(26),
                         rs.getInt(27),
                         rs.getString(28),
                         rs.getString(29),
-                        rs.getString(30),
+                        rs.getString(30).charAt(0),
                         rs.getInt(31),
                         rs.getString(32),
                         rs.getString(33),
-                        rs.getChar(34),
-                        rs.getInt(35),
-                        rs.getString(36),
-                        rs.getString(37),
-                        rs.getString(38),
-                        rs.getString(39)));
+                        rs.getString(34),
+                        rs.getString(35)));
             }
         } catch (SQLException e) {
             throw (e);
@@ -691,10 +680,8 @@ public class DatingResource {
     * Utility method that does the database update, potentially throwing an SQLException,
     * returning void.
     */
-    private void makeMatches(Student studentA) throws Exception {
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet rs = null;
+    private void makeMatches(String id) throws Exception {
+        Student studentA = retrieveStudent(id);
         List<Student> students = retrieveStudents();
 
         //Get list of students and student.  For each element in students, if the element does not equal the student and
@@ -702,20 +689,31 @@ public class DatingResource {
         // equal make a new match with the parameter as the reason.
 
         for(Student studentB : students){
-            if((studentB.getCalvinID() != studentA.getCalvinID()) && (retrieveMatch(studentA.getCalvinID(),
-                    studentB.getCalvinID()) == null)){
-                String reason = '';
-                if(studentA.getMajor() == studentB.getMajor()){
-                    reason = 'Same major';
-                }else if(){
-
-                }else if(){
-
-                }else if(){
-
+            if(((studentB.getCalvinID() != studentA.getCalvinID()) && (retrieveMatch(studentA.getCalvinID(),
+                    studentB.getCalvinID()) == null)) && ((studentB.getGender() == studentA.getGenderWant()) &&
+                    (studentA.getGender() == studentB.getGenderWant()))){
+                String reason = null;
+                if(studentA.getClassYear() == studentB.getClassYear()){
+                    reason = "Same class year";
+                }else if(studentA.getMbti() == studentB.getMbti()){
+                    reason = "Same major department";
+                }else if(studentA.getTulip() == studentB.getTulip()){
+                    reason = "Same major department";
+                }else if(studentA.getHateHope() == studentB.getHateHope()){
+                    reason = "Same major department";
+                }else if(studentA.getBQuiv() == studentB.getBQuiv()){
+                    reason = "Same major department";
+                }else if(studentA.getDiningPreference() == studentB.getDiningPreference()){
+                    reason = "Same major department";
+                }else if(studentA.getBunHate() == studentB.getBunHate()){
+                    reason = "Same major department";
+                }else if(studentA.getChapelDay() == studentB.getChapelDay()){
+                    reason = "Same major department";
+                }else if(studentA.getLoft() == studentB.getLoft()){
+                    reason = "Same major department";
                 }
 
-                if(reason != ''){
+                if(reason != null){
                     Match match = new Match(studentA.getCalvinID(), studentB.getCalvinID(), reason, 0, 0);
                     addOrUpdateMatch(match);
                 }
@@ -796,14 +794,42 @@ public class DatingResource {
 //            statement = connection.createStatement();
 //            rs = statement.executeQuery("SELECT * FROM Student WHERE " + field + "=" + param);
 //            while (rs.next()) {
-//                result.add(new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5),
-//                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getDate(10), rs.getString(11),
-//                        rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16),
-//                        rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21),
-//                        rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26),
-//                        rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
-//                        rs.getString(32), rs.getString(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36),
-//                        rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
+//                result.add(new Student(
+//                                rs.getString(1),
+//                                rs.getString(2),
+//                                rs.getBlob(3),
+//                                rs.getString(4),
+//                                rs.getString(5),
+//                                rs.getString(6),
+//                                rs.getString(7),
+//                                rs.getDate(8),
+//                                rs.getString(9),
+//                                rs.getString(10),
+//                                rs.getString(11),
+//                                rs.getString(12),
+//                                rs.getString(13),
+//                                rs.getString(14),
+//                                rs.getString(15),
+//                                rs.getString(16),
+//                                rs.getString(17),
+//                                rs.getString(18),
+//                                rs.getBoolean(19),
+//                                rs.getString(20),
+//                                rs.getBoolean(21),
+//                                rs.getString(22),
+//                                rs.getInt(23),
+//                                rs.getString(24),
+//                                rs.getString(25),
+//                                rs.getString(26),
+//                                rs.getInt(27),
+//                                rs.getString(28),
+//                                rs.getString(29),
+//                                rs.getString(30).charAt(0),
+//                                rs.getInt(31),
+//                                rs.getString(32),
+//                                rs.getString(33),
+//                                rs.getString(34),
+//                                rs.getString(35)));
 //            }
 //        } catch (SQLException e) {
 //            throw (e);
@@ -838,14 +864,42 @@ public class DatingResource {
                 rs = statement.executeQuery("SELECT * FROM Student WHERE first=" + name + " OR last=" + name);
             }
             while (rs.next()) {
-                result.add(new Student(rs.getString(1), rs.getString(2), rs.getBlob(3), rs.getString(4), rs.getString(5),
-                        rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getDate(10), rs.getString(11),
-                        rs.getString(12), rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16),
-                        rs.getString(17), rs.getBoolean(18), rs.getString(19), rs.getBoolean(20), rs.getBoolean(21),
-                        rs.getBoolean(22), rs.getBoolean(23), rs.getBoolean(24), rs.getString(25), rs.getInt(26),
-                        rs.getInt(27), rs.getString(28), rs.getString(29), rs.getInt(30), rs.getString(31),
-                        rs.getString(32), rs.getString(33), rs.getBoolean(34), rs.getInt(35), rs.getInt(36),
-                        rs.getInt(37), rs.getInt(38), rs.getInt(39), rs.getInt(40), rs.getString(41)));
+                result.add(new Student(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getBlob(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getDate(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getString(11),
+                        rs.getString(12),
+                        rs.getString(13),
+                        rs.getString(14),
+                        rs.getString(15),
+                        rs.getString(16),
+                        rs.getString(17),
+                        rs.getString(18),
+                        rs.getBoolean(19),
+                        rs.getString(20),
+                        rs.getBoolean(21),
+                        rs.getString(22),
+                        rs.getInt(23),
+                        rs.getString(24),
+                        rs.getString(25),
+                        rs.getString(26),
+                        rs.getInt(27),
+                        rs.getString(28),
+                        rs.getString(29),
+                        rs.getString(30).charAt(0),
+                        rs.getInt(31),
+                        rs.getString(32),
+                        rs.getString(33),
+                        rs.getString(34),
+                        rs.getString(35)));
             }
         } catch (SQLException e) {
             throw (e);
@@ -891,11 +945,7 @@ public class DatingResource {
                         "', mbti='" + student.getMbti() +
                         "', hasJob='" + student.getHasJob() +
                         "', job='" + student.getJob() +
-                        "', calvinT='" + student.getCalvinT() +
-                        "', calvinU='" + student.getCalvinU() +
-                        "', calvinL='" + student.getCalvinL() +
-                        "', calvinI='" + student.getCalvinI() +
-                        "', calvinP='" + student.getCalvinP() +
+                        "', calvinT='" + student.getTulip() +
                         "', hangout='" + student.getHangout() +
                         "', hateHope='" + student.getHateHope() +
                         "', bQuiv='" + student.getBQuiv() +
@@ -903,7 +953,7 @@ public class DatingResource {
                         "', sports='" + student.getSports() +
                         "', bunHate='" + student.getBunHate() +
                         "', studySpot='" + student.getStudySpot() +
-                        "', chapelDay='" + student.getChapelDays() +
+                        "', chapelDay='" + student.getChapelDay() +
                         "', loft='" + student.getLoft() +
                         "', height='" + student.getHeight() +
                         "', nationality='" + student.getNationality() +
@@ -933,11 +983,7 @@ public class DatingResource {
                         "', '" + student.getMbti() +
                         "', '" + student.getHasJob() +
                         "', '" + student.getJob() +
-                        "', '" + student.getCalvinT() +
-                        "', '" + student.getCalvinU() +
-                        "', '" + student.getCalvinL() +
-                        "', '" + student.getCalvinI() +
-                        "', '" + student.getCalvinP() +
+                        "', '" + student.getTulip() +
                         "', '" + student.getHangout() +
                         "', '" + student.getHateHope() +
                         "', '" + student.getBQuiv() +
@@ -945,7 +991,7 @@ public class DatingResource {
                         "', '" + student.getSports() +
                         "', '" + student.getBunHate() +
                         "', '" + student.getStudySpot() +
-                        "', '" + student.getChapelDays() +
+                        "', '" + student.getChapelDay() +
                         "', '" + student.getLoft() +
                         "', '" + student.getHeight() +
                         "', '" + student.getNationality() +

@@ -29,11 +29,7 @@ CREATE TABLE Student (
 	mbti varchar(5),
 	hasJob boolean,
 	job varchar(50),
-	calvinT char(1),
-	calvinU char(1),
-	calvinL char(1),
-	calvinI char(1),
-	calvinP char(1),
+	tulip boolean,
 	hangout varchar(50),
 	hateHope integer,
 	bQuiv varchar(50),
@@ -54,6 +50,7 @@ CREATE TABLE Match (
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
 	bCalvinID varchar(50) REFERENCES Student(CalvinID),
 	reason varchar(200),
+	--Unvalidated is a 0, validated is a 1, invalidated is a 2.
 	aValid integer,
 	bValid integer,
 	);

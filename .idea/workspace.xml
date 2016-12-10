@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f87046aa-1656-413a-aed3-96a3f3b9bcb7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/Date.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/StudentPicture.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/server.iml" afterPath="$PROJECT_DIR$/.idea/server.iml" />
+    <list default="true" id="f87046aa-1656-413a-aed3-96a3f3b9bcb7" name="Default" comment="Added Match generation and searching by name">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Datedate.class" afterPath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Datedate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Match.class" afterPath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Match.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Message.class" afterPath="$PROJECT_DIR$/out/production/server/edu/calvin/cs262/Message.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/server/database/cs262gDating.sql" afterPath="$PROJECT_DIR$/out/production/server/database/cs262gDating.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/cs262gDating.sql" afterPath="$PROJECT_DIR$/src/database/cs262gDating.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java" afterPath="$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/Match.java" afterPath="$PROJECT_DIR$/src/edu/calvin/cs262/Match.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/Message.java" afterPath="$PROJECT_DIR$/src/edu/calvin/cs262/Message.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/edu/calvin/cs262/Student.java" afterPath="$PROJECT_DIR$/src/edu/calvin/cs262/Student.java" />
     </list>
     <ignored path="server.iws" />
@@ -36,77 +34,39 @@
       <file leaf-file-name="DatingResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-              <folding>
-                <marker date="1480815097412" expanded="true" signature="15907:15944" ph="SELECT * FRO... Student" />
-                <marker date="1480815097412" expanded="true" signature="17749:17770" ph="SELECT * FRO... Student" />
-                <marker date="1480815097412" expanded="true" signature="19581:19701" ph="SELECT * FRO... Match" />
-                <marker date="1480815097412" expanded="true" signature="20739:20871" ph="SELECT * FRO... Message" />
-                <marker date="1480815097412" expanded="true" signature="21943:22091" ph="SELECT * FRO... Datedate" />
-                <marker date="1480815097412" expanded="true" signature="23125:23162" ph="SELECT * FRO... Student" />
-                <marker date="1480815097412" expanded="true" signature="23260:25362" ph="UPDATE Stude... " />
-                <marker date="1480815097412" expanded="true" signature="25452:27115" ph="INSERT INTO Student... " />
-                <marker date="1480815097412" expanded="true" signature="27906:28140" ph="SELECT * FRO... Match" />
-                <marker date="1480815097412" expanded="true" signature="28214:28688" ph="UPDATE Match... " />
-                <marker date="1480815097412" expanded="true" signature="28754:28975" ph="INSERT INTO Match... " />
-                <marker date="1480815097412" expanded="true" signature="29774:29805" ph="SELECT * FRO... Message" />
-                <marker date="1480815097412" expanded="true" signature="29897:30126" ph="UPDATE Messa... " />
-                <marker date="1480815097412" expanded="true" signature="30210:30434" ph="INSERT INTO Message... " />
-                <marker date="1480815097412" expanded="true" signature="31232:31264" ph="SELECT * FRO... Datedate" />
-                <marker date="1480815097412" expanded="true" signature="31353:31711" ph="UPDATE Dated... " />
-                <marker date="1480815097412" expanded="true" signature="31792:32092" ph="INSERT INTO Datedate... " />
-                <marker date="1480815097412" expanded="true" signature="32891:32918" ph="SELECT MAX(I... Message" />
-                <marker date="1480815097412" expanded="true" signature="33147:33343" ph="INSERT INTO Message... " />
-                <marker date="1480815097412" expanded="true" signature="34125:34149" ph="SELECT MAX(I... Date" />
-                <marker date="1480815097412" expanded="true" signature="34375:34667" ph="INSERT INTO Datedate... " />
-                <marker date="1480815097412" expanded="true" signature="35412:35478" ph="DELETE FROM " />
-                <marker date="1480815097412" expanded="true" signature="36192:36434" ph="DELETE FROM " />
-                <marker date="1480815097412" expanded="true" signature="37156:37185" ph="DELETE FROM " />
-                <marker date="1480815097412" expanded="true" signature="37924:37954" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Datedate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Datedate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Match.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="30" column="87" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
+            <state relative-caret-position="17">
+              <caret line="182" column="32" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1481319585316" expanded="true" signature="17927:17964" ph="SELECT * FRO... Student" />
+                <marker date="1481319585316" expanded="true" signature="20322:20468" ph="SELECT * FRO... Match" />
+                <marker date="1481319585316" expanded="true" signature="21475:21496" ph="SELECT * FRO... Student" />
+                <marker date="1481319585316" expanded="true" signature="23901:24021" ph="SELECT * FRO... Match" />
+                <marker date="1481319585316" expanded="true" signature="27435:27567" ph="SELECT * FRO... Message" />
+                <marker date="1481319585316" expanded="true" signature="28639:28787" ph="SELECT * FRO... Datedate" />
+                <marker date="1481319585316" expanded="true" signature="32945:33006" ph="SELECT * FRO... Student" />
+                <marker date="1481319585316" expanded="true" signature="33087:33142" ph="SELECT * FRO... Student" />
+                <marker date="1481319585316" expanded="true" signature="35497:35534" ph="SELECT * FRO... Student" />
+                <marker date="1481319585316" expanded="true" signature="35657:37962" ph="UPDATE Stude... " />
+                <marker date="1481319585316" expanded="true" signature="38053:40000" ph="INSERT INTO Student... " />
+                <marker date="1481319585316" expanded="true" signature="40791:41025" ph="SELECT * FRO... Match" />
+                <marker date="1481319585316" expanded="true" signature="41099:41573" ph="UPDATE Match... " />
+                <marker date="1481319585316" expanded="true" signature="41639:41860" ph="INSERT INTO Match... " />
+                <marker date="1481319585316" expanded="true" signature="42659:42690" ph="SELECT * FRO... Message" />
+                <marker date="1481319585316" expanded="true" signature="42782:43011" ph="UPDATE Messa... " />
+                <marker date="1481319585316" expanded="true" signature="43095:43319" ph="INSERT INTO Message... " />
+                <marker date="1481319585316" expanded="true" signature="44117:44149" ph="SELECT * FRO... Datedate" />
+                <marker date="1481319585316" expanded="true" signature="44238:44596" ph="UPDATE Dated... " />
+                <marker date="1481319585316" expanded="true" signature="44677:44977" ph="INSERT INTO Datedate... " />
+                <marker date="1481319585316" expanded="true" signature="45776:45803" ph="SELECT MAX(I... Message" />
+                <marker date="1481319585316" expanded="true" signature="46032:46228" ph="INSERT INTO Message... " />
+                <marker date="1481319585316" expanded="true" signature="47010:47034" ph="SELECT MAX(I... Date" />
+                <marker date="1481319585316" expanded="true" signature="47260:47552" ph="INSERT INTO Datedate... " />
+                <marker date="1481319585316" expanded="true" signature="48297:48363" ph="DELETE FROM " />
+                <marker date="1481319585316" expanded="true" signature="49077:49319" ph="DELETE FROM " />
+                <marker date="1481319585316" expanded="true" signature="50041:50070" ph="DELETE FROM " />
+                <marker date="1481319585316" expanded="true" signature="50809:50839" ph="DELETE FROM " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="83" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="83" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,6 +75,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -133,10 +98,10 @@
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/StudentPicture.java" />
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Date.java" />
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Message.java" />
-        <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Student.java" />
-        <option value="$PROJECT_DIR$/src/database/cs262gDating.sql" />
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Match.java" />
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Datedate.java" />
+        <option value="$PROJECT_DIR$/src/database/cs262gDating.sql" />
+        <option value="$PROJECT_DIR$/src/edu/calvin/cs262/Student.java" />
         <option value="$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java" />
       </list>
     </option>
@@ -146,6 +111,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -179,8 +151,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -199,8 +169,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cs262" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -673,30 +695,39 @@
       <updated>1480785954135</updated>
       <workItem from="1480785956485" duration="9930000" />
       <workItem from="1480803710968" duration="11424000" />
+      <workItem from="1481308292608" duration="10937000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Matching function">
+      <created>1481316864919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481316864919</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21354000" />
+    <option name="totallyTimeSpent" value="32291000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -749,6 +780,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Matching function" />
+    <MESSAGE value="Added Match generation and searching by name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Match generation and searching by name" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -763,31 +799,105 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1480815097412" expanded="true" signature="15907:15944" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="17749:17770" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="19581:19701" ph="SELECT * FRO... Match" />
-            <marker date="1480815097412" expanded="true" signature="20739:20871" ph="SELECT * FRO... Message" />
-            <marker date="1480815097412" expanded="true" signature="21943:22091" ph="SELECT * FRO... Datedate" />
-            <marker date="1480815097412" expanded="true" signature="23125:23162" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="23260:25362" ph="UPDATE Stude... " />
-            <marker date="1480815097412" expanded="true" signature="25452:27115" ph="INSERT INTO Student... " />
-            <marker date="1480815097412" expanded="true" signature="27906:28140" ph="SELECT * FRO... Match" />
-            <marker date="1480815097412" expanded="true" signature="28214:28688" ph="UPDATE Match... " />
-            <marker date="1480815097412" expanded="true" signature="28754:28975" ph="INSERT INTO Match... " />
-            <marker date="1480815097412" expanded="true" signature="29774:29805" ph="SELECT * FRO... Message" />
-            <marker date="1480815097412" expanded="true" signature="29897:30126" ph="UPDATE Messa... " />
-            <marker date="1480815097412" expanded="true" signature="30210:30434" ph="INSERT INTO Message... " />
-            <marker date="1480815097412" expanded="true" signature="31232:31264" ph="SELECT * FRO... Datedate" />
-            <marker date="1480815097412" expanded="true" signature="31353:31711" ph="UPDATE Dated... " />
-            <marker date="1480815097412" expanded="true" signature="31792:32092" ph="INSERT INTO Datedate... " />
-            <marker date="1480815097412" expanded="true" signature="32891:32918" ph="SELECT MAX(I... Message" />
-            <marker date="1480815097412" expanded="true" signature="33147:33343" ph="INSERT INTO Message... " />
-            <marker date="1480815097412" expanded="true" signature="34125:34149" ph="SELECT MAX(I... Date" />
-            <marker date="1480815097412" expanded="true" signature="34375:34667" ph="INSERT INTO Datedate... " />
-            <marker date="1480815097412" expanded="true" signature="35412:35478" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="36192:36434" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="37156:37185" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="37924:37954" ph="DELETE FROM " />
+            <element signature="imports" expanded="true" />
+            <marker date="1481319585316" expanded="true" signature="17927:17964" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="20322:20468" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="21475:21496" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="23901:24021" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="27435:27567" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="28639:28787" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="32945:33006" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="33087:33142" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35497:35534" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35657:37962" ph="UPDATE Stude... " />
+            <marker date="1481319585316" expanded="true" signature="38053:40000" ph="INSERT INTO Student... " />
+            <marker date="1481319585316" expanded="true" signature="40791:41025" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="41099:41573" ph="UPDATE Match... " />
+            <marker date="1481319585316" expanded="true" signature="41639:41860" ph="INSERT INTO Match... " />
+            <marker date="1481319585316" expanded="true" signature="42659:42690" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="42782:43011" ph="UPDATE Messa... " />
+            <marker date="1481319585316" expanded="true" signature="43095:43319" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="44117:44149" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="44238:44596" ph="UPDATE Dated... " />
+            <marker date="1481319585316" expanded="true" signature="44677:44977" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="45776:45803" ph="SELECT MAX(I... Message" />
+            <marker date="1481319585316" expanded="true" signature="46032:46228" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="47010:47034" ph="SELECT MAX(I... Date" />
+            <marker date="1481319585316" expanded="true" signature="47260:47552" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="48297:48363" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="49077:49319" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50041:50070" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50809:50839" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Datedate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="30" column="87" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="83" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1481319585316" expanded="true" signature="17927:17964" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="20322:20468" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="21475:21496" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="23901:24021" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="27435:27567" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="28639:28787" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="32945:33006" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="33087:33142" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35497:35534" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35657:37962" ph="UPDATE Stude... " />
+            <marker date="1481319585316" expanded="true" signature="38053:40000" ph="INSERT INTO Student... " />
+            <marker date="1481319585316" expanded="true" signature="40791:41025" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="41099:41573" ph="UPDATE Match... " />
+            <marker date="1481319585316" expanded="true" signature="41639:41860" ph="INSERT INTO Match... " />
+            <marker date="1481319585316" expanded="true" signature="42659:42690" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="42782:43011" ph="UPDATE Messa... " />
+            <marker date="1481319585316" expanded="true" signature="43095:43319" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="44117:44149" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="44238:44596" ph="UPDATE Dated... " />
+            <marker date="1481319585316" expanded="true" signature="44677:44977" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="45776:45803" ph="SELECT MAX(I... Message" />
+            <marker date="1481319585316" expanded="true" signature="46032:46228" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="47010:47034" ph="SELECT MAX(I... Date" />
+            <marker date="1481319585316" expanded="true" signature="47260:47552" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="48297:48363" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="49077:49319" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50041:50070" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50809:50839" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -805,26 +915,12 @@
     <entry file="file://$USER_HOME$/Documents/Test/StudentPicture.java" />
     <entry file="file://$USER_HOME$/Documents/Test/Message.java" />
     <entry file="file://$USER_HOME$/Documents/Test/Date.java" />
-    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/StudentPicture.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/StudentPicture.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Date.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Match.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/cs262gDating.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
+        <state relative-caret-position="476">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -837,62 +933,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Datedate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="30" column="87" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Match.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        <state relative-caret-position="704">
+          <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Datedate.java">
+    <entry file="file://$PROJECT_DIR$/src/database/cs262gDating.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="86" column="28" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
+        <state relative-caret-position="272">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="295" column="28" selection-start-line="295" selection-start-column="28" selection-end-line="295" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/calvin/cs262/DatingResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="17">
+          <caret line="182" column="32" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
           <folding>
-            <marker date="1480815097412" expanded="true" signature="15907:15944" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="17749:17770" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="19581:19701" ph="SELECT * FRO... Match" />
-            <marker date="1480815097412" expanded="true" signature="20739:20871" ph="SELECT * FRO... Message" />
-            <marker date="1480815097412" expanded="true" signature="21943:22091" ph="SELECT * FRO... Datedate" />
-            <marker date="1480815097412" expanded="true" signature="23125:23162" ph="SELECT * FRO... Student" />
-            <marker date="1480815097412" expanded="true" signature="23260:25362" ph="UPDATE Stude... " />
-            <marker date="1480815097412" expanded="true" signature="25452:27115" ph="INSERT INTO Student... " />
-            <marker date="1480815097412" expanded="true" signature="27906:28140" ph="SELECT * FRO... Match" />
-            <marker date="1480815097412" expanded="true" signature="28214:28688" ph="UPDATE Match... " />
-            <marker date="1480815097412" expanded="true" signature="28754:28975" ph="INSERT INTO Match... " />
-            <marker date="1480815097412" expanded="true" signature="29774:29805" ph="SELECT * FRO... Message" />
-            <marker date="1480815097412" expanded="true" signature="29897:30126" ph="UPDATE Messa... " />
-            <marker date="1480815097412" expanded="true" signature="30210:30434" ph="INSERT INTO Message... " />
-            <marker date="1480815097412" expanded="true" signature="31232:31264" ph="SELECT * FRO... Datedate" />
-            <marker date="1480815097412" expanded="true" signature="31353:31711" ph="UPDATE Dated... " />
-            <marker date="1480815097412" expanded="true" signature="31792:32092" ph="INSERT INTO Datedate... " />
-            <marker date="1480815097412" expanded="true" signature="32891:32918" ph="SELECT MAX(I... Message" />
-            <marker date="1480815097412" expanded="true" signature="33147:33343" ph="INSERT INTO Message... " />
-            <marker date="1480815097412" expanded="true" signature="34125:34149" ph="SELECT MAX(I... Date" />
-            <marker date="1480815097412" expanded="true" signature="34375:34667" ph="INSERT INTO Datedate... " />
-            <marker date="1480815097412" expanded="true" signature="35412:35478" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="36192:36434" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="37156:37185" ph="DELETE FROM " />
-            <marker date="1480815097412" expanded="true" signature="37924:37954" ph="DELETE FROM " />
+            <element signature="imports" expanded="true" />
+            <marker date="1481319585316" expanded="true" signature="17927:17964" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="20322:20468" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="21475:21496" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="23901:24021" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="27435:27567" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="28639:28787" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="32945:33006" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="33087:33142" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35497:35534" ph="SELECT * FRO... Student" />
+            <marker date="1481319585316" expanded="true" signature="35657:37962" ph="UPDATE Stude... " />
+            <marker date="1481319585316" expanded="true" signature="38053:40000" ph="INSERT INTO Student... " />
+            <marker date="1481319585316" expanded="true" signature="40791:41025" ph="SELECT * FRO... Match" />
+            <marker date="1481319585316" expanded="true" signature="41099:41573" ph="UPDATE Match... " />
+            <marker date="1481319585316" expanded="true" signature="41639:41860" ph="INSERT INTO Match... " />
+            <marker date="1481319585316" expanded="true" signature="42659:42690" ph="SELECT * FRO... Message" />
+            <marker date="1481319585316" expanded="true" signature="42782:43011" ph="UPDATE Messa... " />
+            <marker date="1481319585316" expanded="true" signature="43095:43319" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="44117:44149" ph="SELECT * FRO... Datedate" />
+            <marker date="1481319585316" expanded="true" signature="44238:44596" ph="UPDATE Dated... " />
+            <marker date="1481319585316" expanded="true" signature="44677:44977" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="45776:45803" ph="SELECT MAX(I... Message" />
+            <marker date="1481319585316" expanded="true" signature="46032:46228" ph="INSERT INTO Message... " />
+            <marker date="1481319585316" expanded="true" signature="47010:47034" ph="SELECT MAX(I... Date" />
+            <marker date="1481319585316" expanded="true" signature="47260:47552" ph="INSERT INTO Datedate... " />
+            <marker date="1481319585316" expanded="true" signature="48297:48363" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="49077:49319" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50041:50070" ph="DELETE FROM " />
+            <marker date="1481319585316" expanded="true" signature="50809:50839" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
