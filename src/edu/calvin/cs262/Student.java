@@ -1,5 +1,7 @@
 package edu.calvin.cs262;
 
+import org.postgresql.util.PGbytea;
+
 import java.sql.Date;
 import java.sql.Blob;
 
@@ -11,14 +13,13 @@ import java.sql.Blob;
  */
 class Student {
 
-    private String CalvinID, password, first, last, username, classYear, homeCity, homeState, homeCountry, major,
+    private String CalvinID, password, picture, first, last, username, classYear, homeCity, homeState, homeCountry, major,
             majorDepartment, majorNumber, gender, genderWant, religion, mbti, job, hangout, bQuiv, diningPreference, sports,
             studySpot, chapelDay, nationality, vocation, aboutMe, status;
     private char loft;
     private int hateHope, bunHate, height;
     private boolean hasJob, tulip;
     private Date birthday;
-    private Blob picture;
 
 
     @SuppressWarnings("unused")
@@ -26,7 +27,7 @@ class Student {
 
     Student(String CalvinID,
             String password,
-            Blob picture,
+            String picture,
             String first,
             String last,
             String username,
@@ -106,7 +107,7 @@ class Student {
     public String getPassword() { return password; }
 
     @SuppressWarnings("unused")
-    public Blob getBlob() { return picture; }
+    public String getPicture() { return picture; }
 
     @SuppressWarnings("unused")
     public String getFirst() { return first; }
@@ -215,7 +216,7 @@ class Student {
     public void setPassword(String password) { this.password = password; }
 
     @SuppressWarnings("unused")
-    public void setBlob(Blob picture) { this.picture = picture; }
+    public void setPicture(String picture) { this.picture = picture; }
 
     @SuppressWarnings("unused")
     public void setFirst(String first) { this.first = first; }

@@ -356,18 +356,16 @@ public class DatingResource {
     @Produces("application/json")
     public String deleteStudent(@PathParam("id") String id) {
         try {
-            byte[] array = new byte[0];
-            Blob blob = new SerialBlob(array);
             Date date = new Date(0);
             Student x = new Student(
                     id,
                     "deleted",
-                    blob,
                     "deleted",
                     "deleted",
                     "deleted",
                     "deleted",
-                    date ,
+                    "deleted",
+                     date,
                     "deleted",
                     "deleted",
                     "deleted",
@@ -508,12 +506,12 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Student WHERE CalvinID=" + id);
+            rs = statement.executeQuery("SELECT * FROM student WHERE CalvinID=" + id);
             if (rs.next()) {
                 student = new Student(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getBlob(3),
+                        rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
@@ -570,7 +568,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Match WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
+            rs = statement.executeQuery("SELECT * FROM match WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
                     + ") OR (aCalvinID=" + id2 +" AND bCalvinID=" + id1 +")");
             if (rs.next()) {
                 match = new Match(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5));
@@ -599,12 +597,12 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Student");
+            rs = statement.executeQuery("SELECT * FROM student");
             while (rs.next()) {
                 students.add(new Student(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getBlob(3),
+                        rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
@@ -661,7 +659,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Match WHERE (aCalvinID=" + id + " OR bCalvinID=" + id
+            rs = statement.executeQuery("SELECT * FROM match WHERE (aCalvinID=" + id + " OR bCalvinID=" + id
                     + ") AND (aValid=1 AND bValid=1)");
             while (rs.next()) {
                 matches.add(new Match(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5)));
@@ -734,7 +732,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Message WHERE (toID=" + id1 + " AND fromID=" + id2 +") OR (toID="
+            rs = statement.executeQuery("SELECT * FROM message WHERE (toID=" + id1 + " AND fromID=" + id2 +") OR (toID="
                     + id2 + " AND fromID=" + id1 +")");
             while (rs.next()) {
                 messages.add(new Message(rs.getInt(1), rs.getTimestamp(2), rs.getString(3), rs.getString(4),
@@ -763,7 +761,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Datedate WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
+            rs = statement.executeQuery("SELECT * FROM datedate WHERE (aCalvinID=" + id1 + " AND bCalvinID=" + id2
                     +") OR aCalvinID=" + id2 + " AND bCalvinID=" + id1 +")");
             while (rs.next()) {
                 dates.add(new Datedate(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4), rs.getBoolean(5),
@@ -797,7 +795,7 @@ public class DatingResource {
 //                result.add(new Student(
 //                                rs.getString(1),
 //                                rs.getString(2),
-//                                rs.getBlob(3),
+//                                rs.getString(3),
 //                                rs.getString(4),
 //                                rs.getString(5),
 //                                rs.getString(6),
@@ -859,15 +857,15 @@ public class DatingResource {
                 String firstName = array[0];
                 String lastName = array[1];
 
-                rs = statement.executeQuery("SELECT * FROM Student WHERE first=" + firstName + " AND last=" + lastName);
+                rs = statement.executeQuery("SELECT * FROM student WHERE first=" + firstName + " AND last=" + lastName);
             } else {
-                rs = statement.executeQuery("SELECT * FROM Student WHERE first=" + name + " OR last=" + name);
+                rs = statement.executeQuery("SELECT * FROM student WHERE first=" + name + " OR last=" + name);
             }
             while (rs.next()) {
                 result.add(new Student(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getBlob(3),
+                        rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
@@ -923,11 +921,11 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Student WHERE CalvinID=" + student.getCalvinID());
+            rs = statement.executeQuery("SELECT * FROM student WHERE CalvinID=" + student.getCalvinID());
             if (rs.next()) {
                 statement.executeUpdate(
-                        "UPDATE Student SET password='" + student.getPassword() +
-                        "', picture='" + student.getBlob() +
+                        "UPDATE student SET password='" + student.getPassword() +
+                        "', picture='" + student.getPicture() +
                         "', first='" + student.getFirst() +
                         "', last='" + student.getLast() +
                         "', username='" + student.getUsername() +
@@ -964,9 +962,9 @@ public class DatingResource {
                         "'");
             } else {
                 statement.executeUpdate(
-                        "INSERT INTO Student VALUES ('" + student.getCalvinID() +
+                        "INSERT INTO student VALUES ('" + student.getCalvinID() +
                         "', '" + student.getPassword() +
-                        "', '" + student.getBlob() +
+                        "', '" + student.getPicture() +
                         "', '" + student.getFirst() +
                         "', '" + student.getLast() +
                         "', '" + student.getUsername() +
@@ -1022,17 +1020,17 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Match WHERE (aCalvinID=" + match.getACalvinID()
+            rs = statement.executeQuery("SELECT * FROM match WHERE (aCalvinID=" + match.getACalvinID()
                     + " AND bCalvinID=" + match.getBCalvinID() +") OR (aCalvinID=" + match.getBCalvinID()
                     + " AND bCalvinID=" + match.getACalvinID() +")");
             if (rs.next()) {
-                statement.executeUpdate("UPDATE Match SET aCalvinID='" + match.getACalvinID() + "', bCalvinID='"
+                statement.executeUpdate("UPDATE match SET aCalvinID='" + match.getACalvinID() + "', bCalvinID='"
                         + match.getBCalvinID() + "', reason='" + match.getReason() + "', aValid=" + match.getAValid()
                         + ", bValid=" + match.getBValid() + " WHERE (aCalvinID=" + match.getACalvinID()
                         + " AND bCalvinID=" + match.getBCalvinID() +") OR (aCalvinID=" + match.getBCalvinID()
                         + " AND bCalvinID=" + match.getACalvinID() +")");
             } else {
-                statement.executeUpdate("INSERT INTO Match VALUES ('" + match.getACalvinID() + "', '"
+                statement.executeUpdate("INSERT INTO match VALUES ('" + match.getACalvinID() + "', '"
                         + match.getBCalvinID() + "', '" + match.getReason() + "', " + match.getAValid() + ", "
                         + match.getBValid() + "')");
             }
@@ -1058,13 +1056,13 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Message WHERE ID=" + message.getID());
+            rs = statement.executeQuery("SELECT * FROM message WHERE ID=" + message.getID());
             if (rs.next()) {
-                statement.executeUpdate("UPDATE Message SET timestamp=" + message.getTimestamp() + ", toID='"
+                statement.executeUpdate("UPDATE message SET timestamp=" + message.getTimestamp() + ", toID='"
                         + message.getToID() + "', fromID='" + message.getFromID() + "', message='"
                         + message.getMessage() + "' WHERE ID=" + message.getID());
             } else {
-                statement.executeUpdate("INSERT INTO Message VALUES (" + message.getID() + ", " + message.getTimestamp()
+                statement.executeUpdate("INSERT INTO message VALUES (" + message.getID() + ", " + message.getTimestamp()
                         + ", '" + message.getToID() + "', '" + message.getFromID() + "', '" + message.getMessage()
                         + "')");
             }
@@ -1090,14 +1088,14 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT * FROM Datedate WHERE ID=" + date.getID());
+            rs = statement.executeQuery("SELECT * FROM datedate WHERE ID=" + date.getID());
             if (rs.next()) {
-                statement.executeUpdate("UPDATE Datedate SET aCalvinID='" + date.getACalvinID() + "', toID='"
+                statement.executeUpdate("UPDATE datedate SET aCalvinID='" + date.getACalvinID() + "', toID='"
                         + date.getBCalvinID() + "', aAccept=" + date.getAAccept() + ", bAccept=" + date.getBAccept()
                         + ", place='" + date.getPlace() + "', activity='" + date.getActivity() + "', timestamp="
                         + date.getTimestamp() + " WHERE ID=" + date.getID());
             } else {
-                statement.executeUpdate("INSERT INTO Datedate VALUES (" + date.getID() + ", " + date.getACalvinID() + "', '"
+                statement.executeUpdate("INSERT INTO datedate VALUES (" + date.getID() + ", " + date.getACalvinID() + "', '"
                         + date.getBCalvinID() + "', " + date.getAAccept() + ", " + date.getBAccept() + ", '"
                         + date.getPlace() + "', '" + date.getActivity() + "', " + date.getTimestamp() + "')");
             }
@@ -1123,13 +1121,13 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT MAX(ID) FROM Message");
+            rs = statement.executeQuery("SELECT MAX(ID) FROM message");
             if (rs.next()) {
                 message.setID(rs.getInt(1) + 1);
             } else {
                 throw new RuntimeException("failed to find unique ID...");
             }
-            statement.executeUpdate("INSERT INTO Message VALUES (" + message.getID() + ", " + message.getTimestamp()
+            statement.executeUpdate("INSERT INTO message VALUES (" + message.getID() + ", " + message.getTimestamp()
                     + ", '" + message.getToID() + "', '" + message.getFromID() + "', '" + message.getMessage() + "')");
         } catch (SQLException e) {
             throw (e);
@@ -1153,13 +1151,13 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            rs = statement.executeQuery("SELECT MAX(ID) FROM Date");
+            rs = statement.executeQuery("SELECT MAX(ID) FROM date");
             if (rs.next()) {
                 date.setID(rs.getInt(1) + 1);
             } else {
                 throw new RuntimeException("failed to find unique ID...");
             }
-            statement.executeUpdate("INSERT INTO Datedate VALUES (" + date.getID() + ", " + date.getACalvinID() + "', '"
+            statement.executeUpdate("INSERT INTO atedate VALUES (" + date.getID() + ", " + date.getACalvinID() + "', '"
                     + date.getBCalvinID() + "', " + date.getAAccept() + ", " + date.getBAccept() + ", '"
                     + date.getPlace() + "', '" + date.getActivity() + "', " + date.getTimestamp() + "')");
         } catch (SQLException e) {
@@ -1183,7 +1181,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM Student WHERE CalvinID='" + student.getCalvinID() + "'");
+            statement.executeUpdate("DELETE FROM student WHERE CalvinID='" + student.getCalvinID() + "'");
         } catch (SQLException e) {
             throw (e);
         } finally {
@@ -1204,7 +1202,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM Match WHERE (aCalvinID='" + match.getACalvinID() + "' AND bCalvinID='"
+            statement.executeUpdate("DELETE FROM match WHERE (aCalvinID='" + match.getACalvinID() + "' AND bCalvinID='"
                     + match.getBCalvinID() + "') OR (aCalvinID='" + match.getBCalvinID() + "' AND bCalvinID='"
                     + match.getACalvinID() + "')");
         } catch (SQLException e) {
@@ -1227,7 +1225,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM Message WHERE ID=" + message.getID());
+            statement.executeUpdate("DELETE FROM message WHERE ID=" + message.getID());
         } catch (SQLException e) {
             throw (e);
         } finally {
@@ -1248,7 +1246,7 @@ public class DatingResource {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(DB_URI, DB_LOGIN_ID, DB_PASSWORD);
             statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM Datedate WHERE ID=" + date.getID());
+            statement.executeUpdate("DELETE FROM datedate WHERE ID=" + date.getID());
         } catch (SQLException e) {
             throw (e);
         } finally {

@@ -2,19 +2,19 @@
 --
 
 -- Drop previous versions of the tables if they they exist, in reverse order of foreign keys.
-DROP TABLE IF EXISTS Date;
-DROP TABLE IF EXISTS Message;
-DROP TABLE IF EXISTS Match;
-DROP TABLE IF EXISTS Student;
+DROP TABLE IF EXISTS DATEDATE CASCADE;
+DROP TABLE IF EXISTS MESSAGE CASCADE;
+DROP TABLE IF EXISTS MATCH CASCADE;
+DROP TABLE IF EXISTS STUDENT CASCADE;
 
--- Create the schema.
-CREATE TABLE Student (
-	CalvinID varchar(50) PRIMARY KEY,
-	password varchar(50),
-	picture blob,
+-- Create the schema
+CREATE TABLE STUDENT (
+	CalvinID varchar(50) PRIMARY KEY NOT NULL,
+	password varchar(50) NOT NULL,
+	picture varchar(100),
 	first varchar(50),
 	last varchar(50),
-	username varchar(50),
+	username varchar(50) NOT NULL,
 	classYear varchar(50),
 	birthday date,
 	homeCity varchar(50),
@@ -46,24 +46,24 @@ CREATE TABLE Student (
 	status varchar(200)
 	);
 
-CREATE TABLE Match (
+CREATE TABLE MATCH (
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
 	bCalvinID varchar(50) REFERENCES Student(CalvinID),
 	reason varchar(200),
 	--Unvalidated is a 0, validated is a 1, invalidated is a 2.
 	aValid integer,
-	bValid integer,
+	bValid integer
 	);
 
-CREATE TABLE Message (
-  ID integer PRIMARY KEY,
-	timestamp timestamp,
+CREATE TABLE MESSAGE (
+    ID integer PRIMARY KEY,
+	"timestamp" timestamp,
 	toID varchar(50) REFERENCES Student(CalvinID),
 	fromID varchar(50) REFERENCES Student(CalvinID),
 	message varchar(1000)
 	);
 
-CREATE TABLE Datedate(
+CREATE TABLE DATEDATE (
 	ID integer PRIMARY KEY,
 	aCalvinID varchar(50) REFERENCES Student(CalvinID),
 	bCalvinID varchar(50) REFERENCES Student(CalvinID),
@@ -71,28 +71,28 @@ CREATE TABLE Datedate(
 	bAccept boolean,
 	place varchar(50),
 	activity varchar(50),
-	time timestamp
+	"time" timestamp
 	);
 
 -- Allow users to select data from the tables.
-GRANT SELECT ON Student TO PUBLIC;
-GRANT SELECT ON Match TO PUBLIC;
-GRANT SELECT ON Message TO PUBLIC;
-GRANT SELECT ON Date TO PUBLIC;
+GRANT SELECT ON TABLE STUDENT TO PUBLIC;
+GRANT SELECT ON TABLE MATCH TO PUBLIC;
+GRANT SELECT ON TABLE MESSAGE TO PUBLIC;
+GRANT SELECT ON TABLE DATEDATE TO PUBLIC;
 
--- Add sample records.
-INSERT INTO Student VALUES ('jgb23', 'alphabet', E'\\000', 'Jay', 'Bigelow', 'meliornox', 2013, 2018, 'May', '1995-06-05', 'Grand Rapids', 'Michigan', 'United States of America', 'Computer Science', 'Demiguy', 'None', 'INTJ', false, '', false, false, false, false, false, 'CS Lounge', 5, 0, 'Commons', '', 5, 'To me, vocation is a word that has lost all meaning due to its overuse, its primary function is to pad motivational speeches.', 'Library', '', false, 0, 0, 0, 0, 0, 69, 'White');
-INSERT INTO Student VALUES ('jsk44', 'gocalvin', E'\\000', 'Joust', 'Knight', 'secretshrek', 2001, 2013, 'September', '1990-10-17', 'Swamp', '', 'Duloc', 'Film Studies with a minor in International Relations', 'Male', 'None', 'ISTP', true, 'Scaring villagers', false, false, false, false, false, 'Home', 10, 0, 'Knollcrest', 'Hockey', 10, 'Being with my family', 'Swamp', 'Wednesday', false, 50, 26, 35, 87, 1, 86, 'Ogre');
-INSERT INTO Student VALUES ('aaa11', 'password', E'\\000', 'Muhammed', 'Lee', 'generic', 2000, 2004, 'May', '1992-01-01', 'Grand Rapids', 'Michigan', 'United States of America', 'English', 'None', 'None', '', false, '', false, false, false, false, false, '', 5, 0, '', '', 5, '', '', '', false, 0, 0, 0, 0, 0, 65, 'Chinese');
+-- Add sample records.major varchar(100),
+INSERT INTO STUDENT VALUES ('jgb23','alphabet','https://postimg.org/image/k1mulom33/','Jay','Bigelow','meliornox','Junior','1995-06-05','Grand Rapids','Michigan','United States of America','Computer Science','Science, Technology, Engineering & Mathematics','one','other','other','None','INTJ',false,'',false,'CS Lounge',5, 'always','Commons','',5,'Library','friday','n',69,'White','To me, vocation is a word that has lost all meaning due to its overuse, its primary function is to pad motivational speeches.','I love having fun','I am looking for a fun person');
+INSERT INTO STUDENT VALUES ('jsk44', 'gocalvin', 'https://postimg.org/image/k1mulom33/', 'Joust', 'Knight', 'secretshrek', 'Senior+', '1990-10-17', 'Swamp', '', 'Duloc', 'Film Studies with a minor in International Relations','Communication & Media Studies', '1', 'Male', 'Female', 'None', 'ISTP', true, 'Scaring villagers', false, 'Home', 10, 'sometimes', 'Knollcrest', 'Hockey', 10, 'Swamp', 'Wednesday', 's', 100, 'Ogre', 'Eh, I guess I have purpose in life', 'I do life like its a job', 'I want a girl who likes me');
+INSERT INTO STUDENT VALUES ('aaa11', 'password', 'https://postimg.org/image/k1mulom33/', 'Muhammed', 'Lee', 'generic', 'Freshman', '1992-01-01', 'Grand Rapids', 'Michigan', 'United States of America', 'English and Reading', 'humanities', 'two' ,'male', 'female', 'Catholic', '' , false, '', true, '', 5, 'never', '', '', 5, '', '', 'a', 68, 'Chinese', 'I do life well. That is vocation', 'Date me!', 'If you are interested, lets talk');
 
-INSERT INTO Match VALUES ('jgb23', 'aaa11', 'Both born in Grand Rapids, Michigan, United States of America', 0, 1, '2016-11-02');
-INSERT INTO Match VALUES ('jgb23', 'jsk44', 'Why not', 2, 0, '2016-11-01');
-INSERT INTO Match VALUES ('jsk44', 'aaa11', 'Both do not know TULIP', 0, 0, '2016-10-31');
+INSERT INTO MATCH VALUES ('jgb23', 'aaa11', 'Both born in Grand Rapids, Michigan, United States of America', 0, 1);
+INSERT INTO MATCH VALUES ('jgb23', 'jsk44', 'Why not', 2, 0);
+INSERT INTO MATCH VALUES ('jsk44', 'aaa11', 'Both do not know TULIP', 0, 0);
 
-INSERT INTO Message VALUES (1, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'How are things?');
-INSERT INTO Message VALUES (2, CURRENT_TIMESTAMP, 'aaa11', 'jsk44', '');
-INSERT INTO Message VALUES (3, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'Okay...');
+INSERT INTO MESSAGE VALUES (1, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'How are things?');
+INSERT INTO MESSAGE VALUES (2, CURRENT_TIMESTAMP, 'aaa11', 'jsk44', '');
+INSERT INTO MESSAGE VALUES (3, CURRENT_TIMESTAMP, 'jsk44', 'aaa11', 'Okay...');
 
-INSERT INTO Datedate VALUES (1, 'jgb23', 'aaa11', true, false, 'Johnnys', 'Eat Lunch', '2016-11-08 12:00:00');
-INSERT INTO Datedate VALUES (2, 'jgb23', 'jsk44', false, false, 'Fish House', 'Get Coffee', '2116-12-25 00:00:00');
-INSERT INTO Datedate VALUES (3, 'jsk44', 'aaa11', true, false, 'Spoelhof Center', 'Work Out', '2016-11-12 13:14:15');
+INSERT INTO DATEDATE VALUES (1, 'jgb23', 'aaa11', true, false, 'Johnnys', 'Eat Lunch', '2016-11-08 12:00:00');
+INSERT INTO DATEDATE VALUES (2, 'jgb23', 'jsk44', false, false, 'Fish House', 'Get Coffee', '2116-12-25 00:00:00');
+INSERT INTO DATEDATE VALUES (3, 'jsk44', 'aaa11', true, false, 'Spoelhof Center', 'Work Out', '2016-11-12 13:14:15');

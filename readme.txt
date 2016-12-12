@@ -1,0 +1,1 @@
+Server backend for the Dating app made by The Consumables, Team G of the Fall 2016 CS 262 class at Calvin College.
