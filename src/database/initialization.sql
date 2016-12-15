@@ -147,7 +147,7 @@ INSERT INTO STUDENT VALUES (
 	'Let's get to know each other!');
 
 
-INSERT INTO MATCH VALUES ('rrr23', 'fn2187', 'Both Freshmen', 0, 0);
+INSERT INTO MATCH VALUES ('rrr23', 'fn2187', 'Both Freshmen', 1, 1);
 
 INSERT INTO MESSAGE VALUES (1, CURRENT_TIMESTAMP, 'rrr23', 'fn2187', 'Hello');
 INSERT INTO MESSAGE VALUES (2, CURRENT_TIMESTAMP, 'fn2187', 'rrr23', 'Hey!  How are things?');
